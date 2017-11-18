@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 5: Switch and Button Input
+LilyPad ProtoSnap Plus Activity 6: Buttons and Switches
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Explore digital input and program flow control using the button and switch
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#5-switch-and-button-input
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#6-buttons-and-switches
 
 This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
@@ -50,22 +50,24 @@ void loop()
 
   // The if-else statement lets you do different things based on different inputs:
 
-  if (buttonstate == LOW) // The button will read as LOW when it's pressed
+  // The button will read as LOW when it's pressed
+
+  if (buttonstate == LOW) // Check to see if buttonstate is LOW (pressed) 
   {
-    digitalWrite(buttonLED,HIGH); // If pressed, turn on the LED
+    digitalWrite(buttonLED,HIGH); // If buttonstate is LOW (pressed), turn on the LED
   }
   else
   {
-    digitalWrite(buttonLED,LOW); // If not pressed, turn off the LED
+    digitalWrite(buttonLED,LOW); // If buttonstate is HIGH (unpressed), turn off the LED
   }
 
-  if (switchstate == LOW) // The switch will read as LOW when it's pressed
+  if (switchstate == LOW) // Check to see if switchstate is LOW (switch is on)
   {
-    digitalWrite(switchLED,HIGH); // If the switch is on, turn on the LED
+    digitalWrite(switchLED,HIGH); // If switchstate is LOW (on), turn on the LED
   }
   else
   {
-    digitalWrite(switchLED,LOW); // If the switch is off, turn off the LED
+    digitalWrite(switchLED,LOW); // If switchstate is HIGH (off), turn off the LED
   }
 }
 
