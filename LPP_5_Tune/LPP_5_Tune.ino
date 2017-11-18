@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 4: Making Music
+LilyPad ProtoSnap Plus Activity 5: Play a Tune
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Play musical notes through the buzzer on the LilyPad ProtoSnap Plus
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#4-making-music
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#5-play-a-tune
 
 Uses frequencies from "melody" by Tom Igoe: https://www.arduino.cc/en/Tutorial/toneMelody
 
@@ -16,7 +16,7 @@ This code is released under the MIT License: (http://opensource.org/licenses/MIT
 // Create an integer variable naming the pin we'll use for the buzzer.
 // On the ProtoSnap Plus, it's on A3.
 
-int buzzerpin = A3;
+int buzzer = A3;
 
 // Map musical notes to their frequencies by creating variables for them.
 // You can find the frequencies for higher and lower notes at: https://www.arduino.cc/en/Tutorial/toneMelody
@@ -44,7 +44,7 @@ void setup()
 {
   // Set the buzzer pin to be an output:
   
-  pinMode(buzzerpin, OUTPUT);
+  pinMode(buzzer, OUTPUT);
 }
 
 void loop()
@@ -55,42 +55,43 @@ void loop()
   // The tone will play until we stop it with the noTone command.
   // Each of the below blocks plays one note; the note plays during the delay command.
   
-  tone(buzzerpin,NOTE_C5);
+  tone(buzzer,NOTE_C5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_D5);
+  tone(buzzer,NOTE_D5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_E5);
+  tone(buzzer,NOTE_E5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_F5);
+  tone(buzzer,NOTE_F5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_G5);
+  tone(buzzer,NOTE_G5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_A5);
+  tone(buzzer,NOTE_A5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_B5);
+  tone(buzzer,NOTE_B5);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
-  tone(buzzerpin,NOTE_C6);
+  tone(buzzer,NOTE_C6);
   delay(speed);
-  noTone(buzzerpin);
+  noTone(buzzer);
 
   // A longer delay at the end pauses the sound before looping again.
-  // Here we're taking the speed value and multiplying it by four:
+  // Here we're delaying four times the "speed" value:
 
   delay(speed * 4);
 
   // Try writing your own song using the noted defined at the top of the program!
+  // You can change the note duration by multiplying or dividing the "speed" value
 }

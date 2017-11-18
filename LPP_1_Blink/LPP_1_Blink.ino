@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 1: Blink an LED
+LilyPad ProtoSnap Plus Activity 1: Blinking LEDs
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Blink the pair of yellow LEDs attached to sew tab A5 on the LilyPad USB Plus
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#1-blink-an-led
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#1-blinking-leds
 
 This example is based on: Blink by Scott Fitzgerald
 https://www.arduino.cc/en/Tutorial/Blink

@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 2B: Custom Color Mixing
+LilyPad ProtoSnap Plus Activity 3: Custom Color Mixing
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Expand your color options using analogWrite and the RGB (Red Green Blue) LED
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#2b-custom-color-mixing
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#3-custom-color-mixing
 
 This code is released under the MIT License (http://opensource.org/licenses/MIT)
 

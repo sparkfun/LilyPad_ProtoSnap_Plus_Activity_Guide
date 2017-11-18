@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 3: Fading LEDs
+LilyPad ProtoSnap Plus Activity 4: Fading LEDs
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Use for-loops to smoothly vary the brightness of LEDs
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#3-fading-leds
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#4-fading-leds
 
 This code is released under the MIT License (http://opensource.org/licenses/MIT)
 

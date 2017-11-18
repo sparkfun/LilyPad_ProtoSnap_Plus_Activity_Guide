@@ -1,11 +1,11 @@
 /*
-LilyPad ProtoSnap Plus Activity 2A: Simple Color Mixing
+LilyPad ProtoSnap Plus Activity 2: Basic Color Mixing
 SparkFun Electronics
 https://www.sparkfun.com/products/14346
 
 Create primary and secondary colors on the built-in RGB (Red/Green/Blue) LED
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#2a-simple-color-mixing
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#2-basic-color-mixing
 
 This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
