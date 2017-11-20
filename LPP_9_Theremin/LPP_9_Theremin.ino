@@ -72,10 +72,6 @@ void loop()
   frequency = map(sensorreading,0,255,lowestfrequency,highestfrequency);
   
   tone(buzzer,frequency);
-
-  // Pause a moment between readings / tones:
-
-  delay(50);
 }
 
 void barGraph(int value)
