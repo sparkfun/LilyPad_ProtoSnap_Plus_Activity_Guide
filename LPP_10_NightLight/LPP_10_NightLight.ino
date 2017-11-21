@@ -88,7 +88,7 @@ void loop()
 
     // Wait a random amount of time (up to 10 seconds)
 
-    delay(random(10000));
+    delay(random(5000));
   }
   else
   {
