@@ -5,7 +5,7 @@ https://www.sparkfun.com/products/14346
 
 Create a reaction timer game
 
-Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#10-twinkling-night-light-project
+Follow the tutorial at: https://learn.sparkfun.com/tutorials/lilypad-protosnap-plus-activity-guide#11-reaction-timer-project
 
 This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
@@ -17,7 +17,7 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 int bargraphLED[6] = {15,16,17,18,19,20};
 
-int redLED = 14;
+int redLED = 12;
 int greenLED = 13;
 
 int buttonpin = A4;
@@ -28,7 +28,7 @@ void setup()
 
   // Initialize the pins we'll be using
   
-  pinMode(buttonpin, INPUT);
+  pinMode(buttonpin, INPUT_PULLUP);
 
   for (x = 0; x <= 5; x++)
   {
@@ -45,37 +45,36 @@ void setup()
 
 void loop()
 {
-  int start, end, reactiontime;
+  int starttime, endtime, reactiontime;
 
   // Get ready, get set...
 
-  digitalWrite(greenLED,HIGH);  // green
+  analogWrite(greenLED,25);  // green
 
   delay(1000);
   
-  digitalWrite(greenLED,HIGH);  // red + green = yellow
-  digitalWrite(redLED,HIGH);
+  analogWrite(redLED,75);  // red + green = yellow
 
   delay(1000);
   
-  digitalWrite(greenLED,LOW);
-  digitalWrite(redLED,LOW);
+  analogWrite(greenLED,0);
+  analogWrite(redLED,0);
   
   delay(1000);
 
-  delay(random(5000));
+  delay(random(4000));
 
-  digitalWrite(redLED,HIGH);
-  start = millis();
+  analogWrite(redLED,75);
+  starttime = millis();
 
-  if (digitalRead(buttonpin) == HIGH) // not pressed
+  while (digitalRead(buttonpin) == HIGH) // not pressed
   {
     ; // do nothing  
   }
+  analogWrite(redLED,0);
+  endtime = millis();
 
-  end = millis();
-
-  reactiontime = end - start;
+  reactiontime = endtime - starttime;
 
   Serial.print("reaction time: ");
   Serial.print(reactiontime);
@@ -84,18 +83,20 @@ void loop()
   // Map the reaction time into 0 to 255 so we can use
   // our bargraph function (below)
   
-  barGraph(map(reactiontime,0,300,0,255));
+  barGraph(constrain(map(reactiontime,0,600,0,255),0,255));
 
   // Wait for another button press to start again
-  
-  if (digitalRead(buttonpin) == HIGH) // not pressed
+
+  delay(1000);
+  while (digitalRead(buttonpin) == HIGH) // not pressed
   {
-    ; // do nothing  
+    ; // do nothing
   }
 
   // Clear out the bargraph
   
   barGraph(0);
+  delay(1000);
 }
 
 void barGraph(int value)
