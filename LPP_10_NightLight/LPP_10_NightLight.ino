@@ -20,7 +20,7 @@ int lightsensor = A2;
 // have the "~" symbol that are compatible with analogWrite.
 
 int numLEDs = 3;
-int LED[9] = {6,A7,A8};
+int LED[3] = {6,A7,A8};
 
 int blueLED = 14;
 
