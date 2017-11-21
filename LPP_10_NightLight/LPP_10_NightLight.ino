@@ -15,12 +15,14 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 int lightsensor = A2;
 
-// Array of all the LEDs we'll be using. You can set these to the sewtabs
+// Array of all the LEDs we'll be twinkling. You can set these to the sewtabs
 // you'll be using in your project. Remember to only choose outputs that
-// have the "~" symbol, that are compatible with analogWrite.
+// have the "~" symbol that are compatible with analogWrite.
 
-int numLEDs = 9;
-int LED[9] = {6,A7,A8,15,16,17,18,19,20};
+int numLEDs = 3;
+int LED[9] = {6,A7,A8};
+
+int blueLED = 14;
 
 // Threshold for light level (when it's darker than this, twinkle LEDs)
 
@@ -38,6 +40,8 @@ void setup()
   {
     pinMode(LED[x],OUTPUT);
   }
+
+  pinMode(blueLED,OUTPUT);
 
   // Initialize the serial monitor
 
@@ -65,6 +69,7 @@ void loop()
   if (lightlevel < threshold)
   {
     Serial.println("ON");
+    analogWrite(blueLED,10);
     
     // Pick a random LED:
     
@@ -72,7 +77,7 @@ void loop()
 
     // Quickly ramp up the brightness of the LED from off to on:
 
-    for (brightness = 0; brightness <= 255; brightness++)
+    for (brightness = 0; brightness <= 255; brightness = brightness + 1)
     {
       analogWrite(LED[x],brightness);
       delay(1);
@@ -80,19 +85,21 @@ void loop()
 
     // Quickly ramp down the brightness of the LED from on to off:
     
-    for (brightness = 255; brightness >= 0; brightness--)
+    for (brightness = 255; brightness >= 0; brightness = brightness - 1)
     {
       analogWrite(LED[x],brightness);
       delay(1);
     }
+    analogWrite(LED[x],0);
 
-    // Wait a random amount of time (up to 10 seconds)
+    // Wait a random amount of time (up to 2 seconds)
 
-    delay(random(5000));
+    delay(random(2000));
   }
   else
   {
     Serial.println("off");
+    analogWrite(blueLED,128);
   }
 }
 
