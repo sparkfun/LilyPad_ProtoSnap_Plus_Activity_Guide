@@ -17,6 +17,7 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 int sensorpin = A2;
 int buzzer = A3;
+int buttonpin = A4;
 int bargraphLED[6] = {15,16,17,18,19,20};
 
 // Set the highest and lowest frequencies
@@ -32,6 +33,7 @@ void setup()
   // Initialize the pins we'll be using
   
   pinMode(sensorpin, INPUT);
+  pinMode(buttonpin, INPUT_PULLUP);
   pinMode(buzzer, OUTPUT);
 
   for (x = 0; x <= 5; x++)
@@ -70,8 +72,12 @@ void loop()
   // of values (0 to 255) to another (lowestfrequency to highestfrequency):
 
   frequency = map(sensorreading,0,255,lowestfrequency,highestfrequency);
-  
-  tone(buzzer,frequency);
+
+  if (digitalRead(buttonpin) == LOW)
+  {
+    noTone(buzzer);
+    tone(buzzer,frequency);
+  }
 }
 
 void barGraph(int value)
