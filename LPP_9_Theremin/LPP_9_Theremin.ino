@@ -16,8 +16,8 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 // Create variables for the pins we'll be using
 
 int sensorpin = A2;
-int buzzer = A3;
 int buttonpin = A4;
+int buzzer = A3;
 int bargraphLED[6] = {15,16,17,18,19,20};
 
 // Set the highest and lowest frequencies
@@ -33,9 +33,9 @@ void setup()
   // Initialize the pins we'll be using
   
   pinMode(sensorpin, INPUT);
-  pinMode(buttonpin, INPUT_PULLUP);
   pinMode(buzzer, OUTPUT);
-
+  pinMode(buttonpin, INPUT_PULLUP);
+  
   for (x = 0; x <= 5; x++)
   {
     pinMode(bargraphLED[x],OUTPUT);
@@ -75,8 +75,11 @@ void loop()
 
   if (digitalRead(buttonpin) == LOW)
   {
-    noTone(buzzer);
     tone(buzzer,frequency);
+  }
+  else
+  {
+    noTone(buzzer);
   }
 }
 
