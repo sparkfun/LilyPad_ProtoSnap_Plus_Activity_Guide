@@ -53,91 +53,91 @@ void loop()
 
   // RGB LEDs:
   
-  digitalWrite(RGB_red,LOW);
-  digitalWrite(RGB_green,LOW);
-  digitalWrite(RGB_blue,LOW);
+  digitalWrite(RGB_red, LOW);
+  digitalWrite(RGB_green, LOW);
+  digitalWrite(RGB_blue, LOW);
 
   // Bottom-edge LEDs
   
-  digitalWrite(redLED,LOW);
-  digitalWrite(greenLED,LOW);
-  digitalWrite(blueLED,LOW);
+  digitalWrite(redLED, LOW);
+  digitalWrite(greenLED, LOW);
+  digitalWrite(blueLED, LOW);
   delay(1000);
 
   // Red (red LED on)
 
-  digitalWrite(RGB_red,HIGH);
-  digitalWrite(RGB_green,LOW);
-  digitalWrite(RGB_blue,LOW);
+  digitalWrite(RGB_red, HIGH);
+  digitalWrite(RGB_green, LOW);
+  digitalWrite(RGB_blue, LOW);
   
-  digitalWrite(redLED,HIGH);
-  digitalWrite(greenLED,LOW);
-  digitalWrite(blueLED,LOW);
+  digitalWrite(redLED, HIGH);
+  digitalWrite(greenLED, LOW);
+  digitalWrite(blueLED, LOW);
   delay(1000);
 
   // Yellow (red and green LEDs on)
 
-  digitalWrite(RGB_red,HIGH);
-  digitalWrite(RGB_green,HIGH);
-  digitalWrite(RGB_blue,LOW);
+  digitalWrite(RGB_red, HIGH);
+  digitalWrite(RGB_green, HIGH);
+  digitalWrite(RGB_blue, LOW);
   
-  digitalWrite(redLED,HIGH);
-  digitalWrite(greenLED,HIGH);
-  digitalWrite(blueLED,LOW);
+  digitalWrite(redLED, HIGH);
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(blueLED, LOW);
   delay(1000);
 
   // Green (green LED on)
 
-  digitalWrite(RGB_red,LOW);
-  digitalWrite(RGB_green,HIGH);
-  digitalWrite(RGB_blue,LOW);
+  digitalWrite(RGB_red, LOW);
+  digitalWrite(RGB_green, HIGH);
+  digitalWrite(RGB_blue, LOW);
   
-  digitalWrite(redLED,LOW);
-  digitalWrite(greenLED,HIGH);
-  digitalWrite(blueLED,LOW);
+  digitalWrite(redLED, LOW);
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(blueLED, LOW);
   delay(1000);
 
   // Cyan (blue and green LEDs on)
 
-  digitalWrite(RGB_red,LOW);
-  digitalWrite(RGB_green,HIGH);
-  digitalWrite(RGB_blue,HIGH);
+  digitalWrite(RGB_red, LOW);
+  digitalWrite(RGB_green, HIGH);
+  digitalWrite(RGB_blue, HIGH);
   
-  digitalWrite(redLED,LOW);
-  digitalWrite(greenLED,HIGH);
-  digitalWrite(blueLED,HIGH);
+  digitalWrite(redLED, LOW);
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(blueLED, HIGH);
   delay(1000);
 
   // Blue (blue LED on)
 
-  digitalWrite(RGB_red,LOW);
-  digitalWrite(RGB_green,LOW);
-  digitalWrite(RGB_blue,HIGH);
+  digitalWrite(RGB_red, LOW);
+  digitalWrite(RGB_green, LOW);
+  digitalWrite(RGB_blue, HIGH);
   
-  digitalWrite(redLED,LOW);
-  digitalWrite(greenLED,LOW);
-  digitalWrite(blueLED,HIGH);
+  digitalWrite(redLED, LOW);
+  digitalWrite(greenLED, LOW);
+  digitalWrite(blueLED, HIGH);
   delay(1000);
 
   // Magenta (red and blue LEDs on)
 
-  digitalWrite(RGB_red,HIGH);
-  digitalWrite(RGB_green,LOW);
-  digitalWrite(RGB_blue,HIGH);
+  digitalWrite(RGB_red, HIGH);
+  digitalWrite(RGB_green, LOW);
+  digitalWrite(RGB_blue, HIGH);
   
-  digitalWrite(redLED,HIGH);
-  digitalWrite(greenLED,LOW);
-  digitalWrite(blueLED,HIGH);
+  digitalWrite(redLED, HIGH);
+  digitalWrite(greenLED, LOW);
+  digitalWrite(blueLED, HIGH);
   delay(1000);
 
   // White (all LEDs on)
 
-  digitalWrite(RGB_red,HIGH);
-  digitalWrite(RGB_green,HIGH);
-  digitalWrite(RGB_blue,HIGH);
+  digitalWrite(RGB_red, HIGH);
+  digitalWrite(RGB_green, HIGH);
+  digitalWrite(RGB_blue, HIGH);
   
-  digitalWrite(redLED,HIGH);
-  digitalWrite(greenLED,HIGH);
-  digitalWrite(blueLED,HIGH);
+  digitalWrite(redLED, HIGH);
+  digitalWrite(greenLED, HIGH);
+  digitalWrite(blueLED, HIGH);
   delay(1000);
 }
