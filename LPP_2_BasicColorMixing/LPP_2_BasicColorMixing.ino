@@ -19,26 +19,26 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 // The built-in LED:
 
-int RGBredpin = 12;
-int RGBgreenpin = 13;
-int RGBbluepin = 14;
+int RGB_red = 12;
+int RGB_green = 13;
+int RGB_blue = 14;
 
 // The colored LEDs along the bottom edge of the board:
 
-int redpin = 6;
-int greenpin = A7;
-int bluepin = A8;
+int redLED = 6;
+int greenLED = A7;
+int blueLED = A8;
 
 void setup()
 {
   // Make all of our LED pins outputs:
 
-  pinMode(RGBredpin, OUTPUT);
-  pinMode(RGBgreenpin, OUTPUT);
-  pinMode(RGBbluepin, OUTPUT);
-  pinMode(redpin, OUTPUT);
-  pinMode(greenpin, OUTPUT);
-  pinMode(bluepin, OUTPUT);
+  pinMode(RGB_red, OUTPUT);
+  pinMode(RGB_green, OUTPUT);
+  pinMode(RGB_blue, OUTPUT);
+  pinMode(redLED, OUTPUT);
+  pinMode(greenLED, OUTPUT);
+  pinMode(blueLED, OUTPUT);
 }
 
 void loop()
@@ -53,91 +53,91 @@ void loop()
 
   // RGB LEDs:
   
-  digitalWrite(RGBredpin,LOW);
-  digitalWrite(RGBgreenpin,LOW);
-  digitalWrite(RGBbluepin,LOW);
+  digitalWrite(RGB_red,LOW);
+  digitalWrite(RGB_green,LOW);
+  digitalWrite(RGB_blue,LOW);
 
   // Bottom-edge LEDs
   
-  digitalWrite(redpin,LOW);
-  digitalWrite(greenpin,LOW);
-  digitalWrite(bluepin,LOW);
+  digitalWrite(redLED,LOW);
+  digitalWrite(greenLED,LOW);
+  digitalWrite(blueLED,LOW);
   delay(1000);
 
   // Red (red LED on)
 
-  digitalWrite(RGBredpin,HIGH);
-  digitalWrite(RGBgreenpin,LOW);
-  digitalWrite(RGBbluepin,LOW);
+  digitalWrite(RGB_red,HIGH);
+  digitalWrite(RGB_green,LOW);
+  digitalWrite(RGB_blue,LOW);
   
-  digitalWrite(redpin,HIGH);
-  digitalWrite(greenpin,LOW);
-  digitalWrite(bluepin,LOW);
+  digitalWrite(redLED,HIGH);
+  digitalWrite(greenLED,LOW);
+  digitalWrite(blueLED,LOW);
   delay(1000);
 
   // Yellow (red and green LEDs on)
 
-  digitalWrite(RGBredpin,HIGH);
-  digitalWrite(RGBgreenpin,HIGH);
-  digitalWrite(RGBbluepin,LOW);
+  digitalWrite(RGB_red,HIGH);
+  digitalWrite(RGB_green,HIGH);
+  digitalWrite(RGB_blue,LOW);
   
-  digitalWrite(redpin,HIGH);
-  digitalWrite(greenpin,HIGH);
-  digitalWrite(bluepin,LOW);
+  digitalWrite(redLED,HIGH);
+  digitalWrite(greenLED,HIGH);
+  digitalWrite(blueLED,LOW);
   delay(1000);
 
   // Green (green LED on)
 
-  digitalWrite(RGBredpin,LOW);
-  digitalWrite(RGBgreenpin,HIGH);
-  digitalWrite(RGBbluepin,LOW);
+  digitalWrite(RGB_red,LOW);
+  digitalWrite(RGB_green,HIGH);
+  digitalWrite(RGB_blue,LOW);
   
-  digitalWrite(redpin,LOW);
-  digitalWrite(greenpin,HIGH);
-  digitalWrite(bluepin,LOW);
+  digitalWrite(redLED,LOW);
+  digitalWrite(greenLED,HIGH);
+  digitalWrite(blueLED,LOW);
   delay(1000);
 
   // Cyan (blue and green LEDs on)
 
-  digitalWrite(RGBredpin,LOW);
-  digitalWrite(RGBgreenpin,HIGH);
-  digitalWrite(RGBbluepin,HIGH);
+  digitalWrite(RGB_red,LOW);
+  digitalWrite(RGB_green,HIGH);
+  digitalWrite(RGB_blue,HIGH);
   
-  digitalWrite(redpin,LOW);
-  digitalWrite(greenpin,HIGH);
-  digitalWrite(bluepin,HIGH);
+  digitalWrite(redLED,LOW);
+  digitalWrite(greenLED,HIGH);
+  digitalWrite(blueLED,HIGH);
   delay(1000);
 
   // Blue (blue LED on)
 
-  digitalWrite(RGBredpin,LOW);
-  digitalWrite(RGBgreenpin,LOW);
-  digitalWrite(RGBbluepin,HIGH);
+  digitalWrite(RGB_red,LOW);
+  digitalWrite(RGB_green,LOW);
+  digitalWrite(RGB_blue,HIGH);
   
-  digitalWrite(redpin,LOW);
-  digitalWrite(greenpin,LOW);
-  digitalWrite(bluepin,HIGH);
+  digitalWrite(redLED,LOW);
+  digitalWrite(greenLED,LOW);
+  digitalWrite(blueLED,HIGH);
   delay(1000);
 
   // Magenta (red and blue LEDs on)
 
-  digitalWrite(RGBredpin,HIGH);
-  digitalWrite(RGBgreenpin,LOW);
-  digitalWrite(RGBbluepin,HIGH);
+  digitalWrite(RGB_red,HIGH);
+  digitalWrite(RGB_green,LOW);
+  digitalWrite(RGB_blue,HIGH);
   
-  digitalWrite(redpin,HIGH);
-  digitalWrite(greenpin,LOW);
-  digitalWrite(bluepin,HIGH);
+  digitalWrite(redLED,HIGH);
+  digitalWrite(greenLED,LOW);
+  digitalWrite(blueLED,HIGH);
   delay(1000);
 
   // White (all LEDs on)
 
-  digitalWrite(RGBredpin,HIGH);
-  digitalWrite(RGBgreenpin,HIGH);
-  digitalWrite(RGBbluepin,HIGH);
+  digitalWrite(RGB_red,HIGH);
+  digitalWrite(RGB_green,HIGH);
+  digitalWrite(RGB_blue,HIGH);
   
-  digitalWrite(redpin,HIGH);
-  digitalWrite(greenpin,HIGH);
-  digitalWrite(bluepin,HIGH);
+  digitalWrite(redLED,HIGH);
+  digitalWrite(greenLED,HIGH);
+  digitalWrite(blueLED,HIGH);
   delay(1000);
 }
