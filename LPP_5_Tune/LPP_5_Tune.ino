@@ -38,7 +38,7 @@ int NOTE_C6 = 1047;
 // We'll also create a variable for how long to play each note in milliseconds.
 // If you make this smaller, the notes will play faster.
 
-int speed = 500;
+int tempo = 500;
 
 void setup()
 {
@@ -56,42 +56,35 @@ void loop()
   // Each of the below blocks plays one note; the note plays during the delay command.
   
   tone(buzzer,NOTE_C5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_D5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_E5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_F5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_G5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_A5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_B5);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   tone(buzzer,NOTE_C6);
-  delay(speed);
-  noTone(buzzer);
+  delay(tempo);
 
   // A longer delay at the end pauses the sound before looping again.
-  // Here we're delaying four times the "speed" value:
+  // Here we're delaying four times the "tempo" value:
 
-  delay(speed * 4);
+  noTone(buzzer);
+  delay(tempo * 4);
 
   // Try writing your own song using the noted defined at the top of the program!
-  // You can change the note duration by multiplying or dividing the "speed" value
+  // You can change the note duration by multiplying or dividing the "tempo" value
 }

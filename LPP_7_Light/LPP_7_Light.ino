@@ -13,7 +13,7 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 // Create variables for the pins we'll use:
 
-int sensorpin = A2;
+int sensorPin = A2;
 
 int redLED = 6;
 int greenLED = A7;
@@ -24,7 +24,7 @@ void setup()
   // Initialize the sensor pin as an input, but without a pullup
   // (Pullups are only used for switch inputs)
   
-  pinMode(sensorpin, INPUT);
+  pinMode(sensorPin, INPUT);
 
   // Initialize the output pins:
   
@@ -39,23 +39,23 @@ void setup()
 
 void loop()
 {
-  int sensorreading;
+  int sensorValue;
 
   // Read the sensor value (will be 0 to 1023):
 
-  sensorreading = analogRead(sensorpin);
+  sensorValue = analogRead(sensorPin);
 
   // Print out the sensor reading to the serial monitor:
 
   Serial.print("sensor value: ");
-  Serial.println(sensorreading);
+  Serial.println(sensorValue);
 
   // Since the sensor value is 0 to 1023,
   // and analogWrite needs a value from 0 to 255,
   // we'll divide the sensor value by four to scale it down:
 
-  analogWrite(redLED,sensorreading / 4);
-  analogWrite(greenLED,sensorreading / 4);
-  analogWrite(blueLED,sensorreading / 4);
+  analogWrite(redLED,sensorValue / 4);
+  analogWrite(greenLED,sensorValue / 4);
+  analogWrite(blueLED,sensorValue / 4);
 }
 

@@ -15,16 +15,16 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 // Create variables for the pins we'll be using
 
-int sensorpin = A2;
-int buttonpin = A4;
+int sensorPin = A2;
+int buttonPin = A4;
 int buzzer = A3;
 int bargraphLED[6] = {15,16,17,18,19,20};
 
 // Set the highest and lowest frequencies
 // (Change these and see what happens)
 
-int highestfrequency = 1047; // C6
-int lowestfrequency = 523; // C5
+int highestFrequency = 1047; // C6
+int lowestFrequency = 523; // C5
 
 void setup()
 {
@@ -32,9 +32,9 @@ void setup()
 
   // Initialize the pins we'll be using
   
-  pinMode(sensorpin, INPUT);
+  pinMode(sensorPin, INPUT);
   pinMode(buzzer, OUTPUT);
-  pinMode(buttonpin, INPUT_PULLUP);
+  pinMode(buttonPin, INPUT_PULLUP);
   
   for (x = 0; x <= 5; x++)
   {
@@ -48,32 +48,32 @@ void setup()
 
 void loop()
 {
-  int sensorreading;
+  int sensorReading;
   int frequency;
 
   // Read the sensor value (will be 0 to 255):
 
-  sensorreading = analogRead(sensorpin);
+  sensorReading = analogRead(sensorPin);
 
   // Print out the sensor reading:
 
   Serial.print("sensor value: ");
-  Serial.println(sensorreading);
+  Serial.println(sensorReading);
 
   // Display the sensor reading on the bar graph LEDs:
 
-  barGraph(sensorreading);
+  barGraph(sensorReading);
 
   // Play a tone based on the light level:
 
-  // The light sensor will return a value from 0 to 255,
+  // The light sensor will return a value from 0 to 1023,
   // but we want to play frequencies that are higher than that.
   // We'll use a built-in fuction called "map" that transforms one range
-  // of values (0 to 255) to another (lowestfrequency to highestfrequency):
+  // of values (0 to 255) to another (lowestFrequency to highestFrequency):
 
-  frequency = map(sensorreading,0,255,lowestfrequency,highestfrequency);
+  frequency = map(sensorReading,0,1023,lowestFrequency,highestFrequency);
 
-  if (digitalRead(buttonpin) == LOW)
+  if (digitalRead(buttonPin) == LOW)
   {
     tone(buzzer,frequency);
   }
@@ -86,27 +86,27 @@ void loop()
 void barGraph(int value)
 {
   // Create a LED bargraph using value as an input.
-  // Value should be in the range 0 to 255.
+  // Value should be in the range 0 to 1023.
 
   int x;
   
   // Step through the bargraph LEDs,
   // Turn them on or off depending on value.
 
-  // Value will be in the range 0 to 255.
+  // Value will be in the range 0 to 1023.
   // There are 6 LEDs in the bargraph.
-  // 255 divided by 6 is 42, so 42 will be our threshold
+  // 1023 divided by 6 is 170, so 170 will be our threshold
   // between each LED (0,42,84, etc.)
 
   for (x=0; x <= 5; x++)
   {
-    if (value > (x*42) )
+    if (value > (x*170) )
     {
-      digitalWrite(bargraphLED[x],HIGH);
+      digitalWrite(bargraphLED[x], HIGH);
     }
     else
     {
-      digitalWrite(bargraphLED[x],LOW);
+      digitalWrite(bargraphLED[x], LOW);
     }    
   }
 }

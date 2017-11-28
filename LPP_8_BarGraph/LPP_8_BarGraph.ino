@@ -13,7 +13,7 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 // Create a variable for the light sensor input:
 
-int sensorpin = A2;
+int sensorPin = A2;
 
 // The six white LEDs on the LilyPad USB Plus are numbered 15 through 20.
 // To make them easier to use, we'll put those numbers into an array.
@@ -32,7 +32,7 @@ void setup()
   // Initialize the sensor pin as an input, but without a pullup
   // (Pullups are only used for switch inputs)
   
-  pinMode(sensorpin, INPUT);
+  pinMode(sensorPin, INPUT);
 
   // Initialize the bargraph LED pins as outputs
   // We'll use the matrix we defined above,
@@ -40,7 +40,7 @@ void setup()
 
   for (x = 0; x <= 5; x++)
   {
-    pinMode(bargraphLED[x],OUTPUT);
+    pinMode(bargraphLED[x], OUTPUT);
   }
 
   // Initialize the serial monitor
@@ -50,21 +50,21 @@ void setup()
 
 void loop()
 {
-  int sensorreading;
+  int sensorValue;
 
-  // Read the sensor value (will be 0 to 255):
+  // Read the sensor value (will be 0 to 1023):
 
-  sensorreading = analogRead(sensorpin);
+  sensorValue = analogRead(sensorPin);
 
   // Print out the sensor reading:
 
   Serial.print("sensor value: ");
-  Serial.println(sensorreading);
+  Serial.println(sensorValue);
 
   // Display the sensor reading on the bar graph LEDs.
-  // This is a new command that we created ourselves (see below).
+  // This is a new function that we created ourselves (see below).
 
-  barGraph(sensorreading);
+  barGraph(sensorValue);
 }
 
 // Here we're making our own command called barGraph:
@@ -75,27 +75,27 @@ void loop()
 void barGraph(int value)
 {
   // Create a LED bargraph using value as an input.
-  // Value should be in the range 0 to 255.
+  // Value should be in the range 0 to 1023.
 
   int x;
   
   // Step through the bargraph LEDs,
   // Turn them on or off depending on value.
 
-  // Value will be in the range 0 to 255.
+  // Value will be in the range 0 to 1023.
   // There are 6 LEDs in the bargraph.
-  // 255 divided by 6 is 42, so 42 will be our threshold
+  // 1023 divided by 6 is 170, so 170 will be our threshold
   // between each LED (0,42,84, etc.)
 
   for (x=0; x <= 5; x++)
   {
-    if (value > (x*42) )
+    if (value > (x*170) )
     {
-      digitalWrite(bargraphLED[x],HIGH);
+      digitalWrite(bargraphLED[x], HIGH);
     }
     else
     {
-      digitalWrite(bargraphLED[x],LOW);
+      digitalWrite(bargraphLED[x], LOW);
     }    
   }
 }

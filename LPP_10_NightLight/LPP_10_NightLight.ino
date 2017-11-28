@@ -13,7 +13,7 @@ This code is released under the MIT License (http://opensource.org/licenses/MIT)
 
 // Create variables for the pins we'll be using:
 
-int lightsensor = A2;
+int lightSensor = A2;
 
 // Array of all the LEDs we'll be twinkling. You can set these to the sewtabs
 // you'll be using in your project. Remember to only choose outputs that
@@ -34,7 +34,7 @@ void setup()
 
   // Initialize the pins we'll be using
   
-  pinMode(lightsensor, INPUT);
+  pinMode(lightSensor, INPUT);
 
   for (x = 0; x <= numLEDs; x++)
   {
@@ -50,26 +50,26 @@ void setup()
 
 void loop()
 {
-  int x,lightlevel,brightness;
+  int x,lightLevel,brightness;
 
   // Read the sensor value (will be 0 to 255):
 
-  lightlevel = analogRead(lightsensor);
+  lightLevel = analogRead(lightSensor);
 
   // Print out the sensor reading:
 
   Serial.print("light level: ");
-  Serial.print(lightlevel);
+  Serial.print(lightLevel);
   Serial.print(" threshold: ");
   Serial.print(threshold);
   Serial.print(" twinkle: ");
 
   // If the light level is below the threshold, twinkle LEDs:
 
-  if (lightlevel < threshold)
+  if (lightLevel < threshold)
   {
     Serial.println("ON");
-    analogWrite(blueLED,10);
+    digitalWrite(blueLED,HIGH);
     
     // Pick a random LED:
     
@@ -99,7 +99,7 @@ void loop()
   else
   {
     Serial.println("off");
-    analogWrite(blueLED,128);
+    digitalWrite(blueLED,LOW);
   }
 }
 
