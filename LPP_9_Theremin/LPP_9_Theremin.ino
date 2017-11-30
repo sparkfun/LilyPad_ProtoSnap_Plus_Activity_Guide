@@ -73,7 +73,7 @@ void loop()
 
   frequency = map(sensorValue,0,1023,lowestFrequency,highestFrequency);
 
-  if (digitalRead(buttonPin) == LOW)
+  if (digitalRead(buttonPin) == LOW) // If the button is pressed:
   {
     tone(buzzer,frequency);
   }
