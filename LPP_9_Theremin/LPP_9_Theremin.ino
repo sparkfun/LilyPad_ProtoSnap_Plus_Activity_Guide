@@ -48,30 +48,30 @@ void setup()
 
 void loop()
 {
-  int sensorReading;
+  int sensorValue;
   int frequency;
 
   // Read the sensor value (will be 0 to 255):
 
-  sensorReading = analogRead(sensorPin);
+  sensorValue = analogRead(sensorPin);
 
   // Print out the sensor reading:
 
   Serial.print("sensor value: ");
-  Serial.println(sensorReading);
+  Serial.println(sensorValue);
 
   // Display the sensor reading on the bar graph LEDs:
 
-  barGraph(sensorReading);
+  barGraph(sensorValue);
 
   // Play a tone based on the light level:
 
   // The light sensor will return a value from 0 to 1023,
-  // but we want to play frequencies that are higher than that.
+  // but we want to map this to a specific range of frequencies.
   // We'll use a built-in fuction called "map" that transforms one range
-  // of values (0 to 255) to another (lowestFrequency to highestFrequency):
+  // of values (0 to 1023) to another (lowestFrequency to highestFrequency):
 
-  frequency = map(sensorReading,0,1023,lowestFrequency,highestFrequency);
+  frequency = map(sensorValue,0,1023,lowestFrequency,highestFrequency);
 
   if (digitalRead(buttonPin) == LOW)
   {
