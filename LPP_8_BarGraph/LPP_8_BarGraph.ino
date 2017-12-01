@@ -23,7 +23,7 @@ int sensorPin = A2;
 
 int bargraphLED[6] = {15,16,17,18,19,20};
 
-// The matrix is indexed from 0 to 5; for example bargraphLED[2] = 17
+// The array is indexed from 0 to 5; for example bargraphLED[2] = 17
 
 void setup()
 {
