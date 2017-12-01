@@ -77,7 +77,7 @@ void loop()
 
     // Quickly ramp up the brightness of the LED from off to on:
 
-    for (brightness = 0; brightness <= 255; brightness = brightness + 1)
+    for (brightness = 0; brightness <= 255; brightness++)
     {
       analogWrite(LED[x],brightness);
       delay(1);
@@ -85,12 +85,11 @@ void loop()
 
     // Quickly ramp down the brightness of the LED from on to off:
     
-    for (brightness = 255; brightness >= 0; brightness = brightness - 1)
+    for (brightness = 255; brightness >= 0; brightness--)
     {
       analogWrite(LED[x],brightness);
       delay(1);
     }
-    analogWrite(LED[x],0);
 
     // Wait a random amount of time (up to 2 seconds)
 
