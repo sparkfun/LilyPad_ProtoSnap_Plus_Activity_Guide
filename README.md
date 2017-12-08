@@ -1,9 +1,7 @@
 LilyPad ProtoSnap Plus Activity Guide
 ========================================
 
-![SparkFun LilyPad ProtoSnap Plus](https://cdn.sparkfun.com/assets/learn_tutorials/6/8/0/ProtoSnapConnectedtoLaptop.jpg)
-
--> [![alt text](https://cdn.sparkfun.com/r/600-600/assets/learn_tutorials/7/1/0/ProtoSnapConnectedtoLaptop.jpg)](https://cdn.sparkfun.com/assets/learn_tutorials/7/1/0/ProtoSnapConnectedtoLaptop.jpg) <-
+-> [![SparkFun LilyPad ProtoSnap Plus](https://cdn.sparkfun.com/r/600-600/assets/learn_tutorials/7/1/0/ProtoSnapConnectedtoLaptop.jpg)](https://cdn.sparkfun.com/assets/learn_tutorials/7/1/0/ProtoSnapConnectedtoLaptop.jpg) <-
 
 This code will get you started with some introductory programming activities exploring each of the LilyPad pieces on the LilyPad ProtoSnap Plus. 
 
